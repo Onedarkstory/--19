@@ -1,0 +1,40 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+
+        int[,] matrix = {
+            { 2, 4, 6 },
+            { 1, 3, 5 },
+            { 7, 8, 9 }
+        };
+
+        Console.WriteLine("Исходная матрица:");
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                Console.Write(matrix[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+
+        int rowSum = 0;
+        for (int j = 0; j < 3; j++)
+        {
+            rowSum += matrix[1, j];
+        }
+
+        int columnProduct = 1;
+        for (int i = 0; i < 3; i++)
+        {
+            columnProduct *= matrix[i, 0];
+
+            Console.WriteLine($"Сумма второй строки: {rowSum}");
+            Console.WriteLine($"Произведение первого столбца: {columnProduct}");
+        }
+    }
+}
